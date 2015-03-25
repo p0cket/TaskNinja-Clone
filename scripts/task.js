@@ -4,6 +4,9 @@ app.controller('TaskController', function($scope, FURL, $firebase, $location, $r
   var ref = new Firebase(FURL);
   var fbTasks = $firebase(ref.child('tasks')).$asArray();
   var taskId = $routeParams.taskId;
+  
+  <!-- gets ID from url -->
+  <!-- then we need to check if the task ID was provided in the URL -->
 
   if(taskId) {
     $scope.selectedTask = getTask(taskId);
