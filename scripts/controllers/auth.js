@@ -31,7 +31,7 @@ app.controller('AuthController', function($scope, $location, Auth){
         //reset form
         $scope.user.email = "";
         $scope.user.oldpass = "";
-        $scope.user.newPass = "";
+        $scope.user.newpass = "";
 
         console.log("Password changed successfuully!");
       }, function(err) {
