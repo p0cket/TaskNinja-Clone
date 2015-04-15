@@ -6,29 +6,29 @@ var app = angular
     'ngResource',
     'ngRoute',
     'firebase',
+    'toaster',
     'angularMoment'
   ])
-  .constant('FURL', 'https://my-task-ninja.firebaseio.com/')
+  .constant('FURL', 'https://my-task-ninja.firebaseio.com/')  
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/browse.html',
         controller: 'BrowseController'
       })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'AuthController'
+      .when('/browse/:taskId', {
+        templateUrl: 'views/browse.html',
+        controller: 'BrowseController'
       })
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'AuthController'
       })
-      .when('/browse:taskId', {
-        templateUrl: 'views/browse.html',
-        controller: 'BrowseController'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'AuthController'
       })
       .otherwise({
         redirectTo: '/'
       });
-
   });
